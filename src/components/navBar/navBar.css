@@ -1,0 +1,37 @@
+.navBar {
+  width: 100vw;
+  max-height: 15vh;
+  padding-top: 1vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+}
+
+.logo {
+  padding: 2px;
+  width: 15vw;
+}
+
+.call {
+  padding: 0px;
+  margin: 0px;
+  font-style: italic;
+  color: var(--red);
+}
+
+@media (min-width:600px) {
+  .navBar {
+    flex-direction: row;       
+  }
+
+  .logo {
+    margin-left: 2vw;
+  }
+
+  .call {
+    margin-right: 2vw;
+  }
+
+}
