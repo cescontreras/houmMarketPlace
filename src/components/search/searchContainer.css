@@ -1,22 +1,12 @@
 .searchContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
-  height: 25vh;
+  height: 80vh;
   background-image: url("../../assets/back1.jpg");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: 75% 25%;
-}
-
-.backImage {
-  width: 100vw;
-  height: auto;
-  /* background-size:100% auto; */
-
-  position: absolute;
-}
-
-.content {
-  position: absolute;
 }

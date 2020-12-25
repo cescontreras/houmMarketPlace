@@ -1,0 +1,27 @@
+.searchInput {
+  height: 25%;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+  .searchButton {
+    background-image: url("../../../assets/search.png");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;    
+    background-color: rgba(var(--salmon), 1);
+    border-radius: 15px;
+  }
+
+  .searchForm {
+    background-color: var(--white);
+    border-radius: 15px;
+  }
+
+  .btn-outline-secondary:not(:disabled):not(.disabled):focus{
+    background-color: var(--red);
+    border-color: var(--white);
+  }
+

@@ -5,7 +5,8 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	--red: #ff5000 !important;
-	--salmon: #ffdbd0;
+	/* --salmon: #ffdbd0; */
+	--salmon: 255,219,208;
 	--pink: #ffdbd0;
 	--beige: #f7f0f0;
 	--white: rgb(247, 239, 240);

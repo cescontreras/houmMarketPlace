@@ -1,16 +1,14 @@
-import React from "react";
-import image from "../../assets/back1.jpg"
+import React, { useState, useEffect } from "react";
+import SearchBar from "./byName/searchBar";
+import Filter from "./filter/filter";
 import "./searchContainer.css";
 
-export default function Search () {
+export default function Search() {
 
-  return (
-    <div className="searchContainer">
-      {/* <img className="backImage" src={image}></img> */}
-      {/* <div className="content"> */}
-      <h1>SEARCH</h1>
-
-      {/* </div> */}
-    </div>
-  )
+	return (
+		<div className="searchContainer">
+      <SearchBar />
+			<Filter />
+		</div>
+	);
 }

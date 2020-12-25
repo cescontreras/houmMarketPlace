@@ -1,0 +1,38 @@
+.filter {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start
+}
+
+  .filterButton {
+    width: 20vw;
+    margin: 1vw;
+    padding: 0px;
+    height: 5vh;
+    background-color: rgba(var(--salmon), 0.6);
+    border-color: transparent;
+    border-radius: 10px;
+    text-align: center; 
+    color: black;
+    font-style: oblique;
+    font-weight: 500;   
+  }
+
+  .btn-primary:not(:disabled):not(.disabled):focus{
+    background-color: var(--red);
+    border-color: var(--white);
+  }
+
+  .btn-primary.active {
+    background-color: var(--red);
+    border-color: var(--white);
+  }
+
+  .btn-primary:hover{
+    background-color: var(--pink);
+    border-color: var(--white);
+}
