@@ -20,15 +20,14 @@ function App() {
     return data.pokemon;    
   }
 
-  const getPokemons = async (query) => {
-    setPokemons([])
-    const p = await getByType(query);    
-    p && p.map(p => {
-      const {data} = axios.get(p.pokemon.url)
-      setPokemons([...pokemons, data])
-    })
-  }
-  console.log(pokemons);
+  // const getPokemons = async (query) => {
+  //   setPokemons([])
+  //   const p = await getByType(query);    
+  //   p && p.map(p => {
+  //     const {data} = axios.get(p.pokemon.url)
+  //     setPokemons([...pokemons, data])
+  //   })
+  // }
   
   useEffect(() => {
     // getPokemons('ground')

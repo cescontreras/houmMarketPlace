@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import LightSpeed from "react-reveal/LightSpeed";
 import axios from "axios";
+import {capitalize} from "../../../helpers/helpers"
 import "./filter.css";
 
 export default function Filter({ filter }) {
@@ -9,10 +10,6 @@ export default function Filter({ filter }) {
 	const getTypes = async () => {
 		const { data } = await axios.get("https://pokeapi.co/api/v2/type");
 		setTypes(data.results);
-	};
-
-	const capitalize = (str) => {
-		return str.charAt(0).toUpperCase() + str.slice(1);
 	};
 
 	useEffect(() => {

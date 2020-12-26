@@ -5,10 +5,11 @@
   align-items: center;
   width: 100vw;
   height: 80vh;
-  background-image: url("../../assets/back1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 75% 25%;
+  background-image: url("../../assets/back.jpg");
+  background-origin: padding-box;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
 }
 
 @media (min-width: 600px){
