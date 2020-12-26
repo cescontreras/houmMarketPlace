@@ -36,3 +36,14 @@
     background-color: var(--pink);
     border-color: var(--white);
 }
+
+@media (min-width:600px) {
+  .filter {
+    height: 50%;
+  }
+
+  .filterButton {
+    width: 10vw;
+    align-items: center;
+  }
+}

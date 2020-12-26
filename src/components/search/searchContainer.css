@@ -10,3 +10,9 @@
     background-repeat: no-repeat;
     background-position: 75% 25%;
 }
+
+@media (min-width: 600px){
+  .searchContainer {
+    flex-direction: row;
+  }
+}
