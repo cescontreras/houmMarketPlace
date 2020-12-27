@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import SearchBar from "./byName/searchBar";
 import Filter from "./filter/filter";
 import "./searchContainer.css";

@@ -15,10 +15,10 @@ function App() {
     setPokemons([...pokemons, data])
   }
 
-  const getByType = async(type) => {
-    const {data} = await axios.get(`https://pokeapi.co/api/v2/type/${type}`)
-    return data.pokemon;    
-  }
+  // const getByType = async(type) => {
+  //   const {data} = await axios.get(`https://pokeapi.co/api/v2/type/${type}`)
+  //   return data.pokemon;    
+  // }
 
   // const getPokemons = async (query) => {
   //   setPokemons([])

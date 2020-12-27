@@ -7,7 +7,7 @@ export default function NavBar() {
 
   return (
     <div className="navBar">
-      <img className='logo' src={logo} ></img>
+      <img className='logo' alt="" src={logo} ></img>
       <h4 className="call">Find your Pokemon !!</h4>
     </div>
   )

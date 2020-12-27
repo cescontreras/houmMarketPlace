@@ -69,14 +69,55 @@
 .pokemonHeldItems {
   width: 100%;
   height: 50px;
-  border: solid black;
+
+  /* border-bottom: solid 0.5px black; */
+  border-top: solid 0.5px black;
+
   display: flex;  
+  justify-content: center;
+  align-items: center;
 }
 
 .heldItemImg {
-
+  width: 20%;
 }
 
 .heldItemInfo {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#heldTitle {
+  font-style: italic;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#heldCategory {
+  font-size: 10px;
+  align-self:flex-end
+}
+
+#heldInfo {
+  font-size: 10px;
+  align-self: baseline;
+}
+
+.pokemonInfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  font-style: italic;
+  font-size: 10px;
+}
+
+.wh {
+
+}
+
+.pokemonAbilities {
 
 }
