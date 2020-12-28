@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import LightSpeed from "react-reveal/LightSpeed";
 import axios from "axios";
-import {capitalize} from "../../../helpers/helpers"
+import { capitalize } from "../../../helpers/helpers";
 import "./filter.css";
 
-export default function Filter({ setFilter, filterPokemons }) {
+export default function Filter({ setFilter, filterPokemons, showTypes }) {
 	const [types, setTypes] = useState([]);
 
 	const getTypes = async () => {
@@ -14,7 +14,7 @@ export default function Filter({ setFilter, filterPokemons }) {
 
 	const handleFilter = (e) => {
 		filterPokemons(e.target.value);
-	}
+	};
 
 	useEffect(() => {
 		getTypes();
@@ -22,10 +22,11 @@ export default function Filter({ setFilter, filterPokemons }) {
 
 	return (
 		<div className="filter">
-			{types[0] &&
+			{ showTypes ?
+			types[0] &&
 				types.map((type, i) => (
 					<LightSpeed right key={i}>
-						<button							
+						<button
 							type="button"
 							value={type.name}
 							className="btn btn-primary shadow-lg filterButton"
@@ -34,7 +35,11 @@ export default function Filter({ setFilter, filterPokemons }) {
 							{capitalize(type.name)}
 						</button>
 					</LightSpeed>
-				))}
+				))
+				:
+				<div></div>
+			
+			}
 		</div>
 	);
 }

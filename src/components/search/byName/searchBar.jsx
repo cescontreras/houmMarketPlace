@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Zoom from "react-reveal/Zoom";
 import "./searchBar.css";
 
-export default function SearchBar({getByName, clear, setFilter}) {
+export default function SearchBar({getByName, getRefs, setFilter, setShowTypes, showTypes}) {
 
 	const [name, setName] = useState('');
 
@@ -12,9 +12,14 @@ export default function SearchBar({getByName, clear, setFilter}) {
 	}	
 
 	const get = async () => {
-		setFilter({status: true, filter: "name"})
+		setFilter(true)
 		await getByName(name)
 	}		
+
+	const showAll = () => {
+		setFilter(false)
+		getRefs()
+	}
 
 	return (
 		<Zoom>
@@ -35,8 +40,13 @@ export default function SearchBar({getByName, clear, setFilter}) {
 						onClick={() => get()}
 					></button>
 				</div>
-				<button >Clear</button>
-				<button >Filter by Type</button>
+				<button onClick={() => showAll()}>Show All</button>
+				{
+					showTypes ?					
+					<button onClick={() => setShowTypes(!showTypes)}>Hide Pokemon Types</button>
+					:
+					<button onClick={() => setShowTypes(!showTypes)}>Show Pokemon Types</button>
+				}
 			</div>
 		</Zoom>
 	);

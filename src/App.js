@@ -11,14 +11,14 @@ function App() {
 	const [pokemons, setPokemons] = useState([]);
   const [filteredPokemons, setFilteredPokemons] = useState([])
 
+  const [filter, setFilter] = useState(false);
+  
 	const [nextPage, setNextPage] = useState();
 	const [prevPage, setPrevPage] = useState();
-
-	const [filter, setFilter] = useState(false);
   
 	const getByName = async (name) => {
     const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
-      setPokemons([...pokemons, data])    
+    setFilteredPokemons([data])    
   };
 
   const filterPokemons = (filter) => {
@@ -62,7 +62,7 @@ function App() {
 	return (
 		<div className="App">
 			<NavBar />
-			<Search getByName={getByName} clear={clear} setFilter={setFilter} filterPokemons={filterPokemons}/>
+			<Search getByName={getByName} getRefs={getRefs} setFilter={setFilter} filterPokemons={filterPokemons}/>
 			<Catalog pokemons={filter ? filteredPokemons : pokemons} />
 			{/* <Footer /> */}
 			<Top />
