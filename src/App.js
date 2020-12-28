@@ -14,17 +14,18 @@ function App() {
 	const [nextPage, setNextPage] = useState();
 	const [prevPage, setPrevPage] = useState();
 
-	const [filter, setFilter] = useState({filter: "", status: false});
+	const [filter, setFilter] = useState(false);
   
 	const getByName = async (name) => {
     const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
       setPokemons([...pokemons, data])    
   };
 
-  const filterPokemons = () => {
-    const filtered = pokemons.filter((p) => p.types[0].type.name === filter.filter)
-    console.log(filtered, 'asdasd');
+  const filterPokemons = (filter) => {
+    setFilter(true)
+    console.log(filter);
     
+    const filtered = pokemons.filter((p) => p.types[0].type.name === filter)    
     setFilteredPokemons(filtered)    
   };
   
@@ -62,7 +63,7 @@ function App() {
 		<div className="App">
 			<NavBar />
 			<Search getByName={getByName} clear={clear} setFilter={setFilter} filterPokemons={filterPokemons}/>
-			<Catalog pokemons={filter.status ? filteredPokemons : pokemons} />
+			<Catalog pokemons={filter ? filteredPokemons : pokemons} />
 			{/* <Footer /> */}
 			<Top />
 		</div>

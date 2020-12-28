@@ -13,8 +13,7 @@ export default function Filter({ setFilter, filterPokemons }) {
 	};
 
 	const handleFilter = (e) => {
-		setFilter({status: true, filter: e.target.value})
-		filterPokemons()
+		filterPokemons(e.target.value);
 	}
 
 	useEffect(() => {
