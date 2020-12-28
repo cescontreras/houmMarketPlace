@@ -4,13 +4,18 @@ import axios from "axios";
 import {capitalize} from "../../../helpers/helpers"
 import "./filter.css";
 
-export default function Filter({ filter }) {
+export default function Filter({ setFilter, filterPokemons }) {
 	const [types, setTypes] = useState([]);
 
 	const getTypes = async () => {
 		const { data } = await axios.get("https://pokeapi.co/api/v2/type");
 		setTypes(data.results);
 	};
+
+	const handleFilter = (e) => {
+		setFilter({status: true, filter: e.target.value})
+		filterPokemons()
+	}
 
 	useEffect(() => {
 		getTypes();
@@ -25,6 +30,7 @@ export default function Filter({ filter }) {
 							type="button"
 							value={type.name}
 							className="btn btn-primary shadow-lg filterButton"
+							onClick={(e) => handleFilter(e)}
 						>
 							{capitalize(type.name)}
 						</button>
