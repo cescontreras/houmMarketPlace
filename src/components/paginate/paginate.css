@@ -1,3 +1,7 @@
+.paginateItem {
+  text-decoration: none;
+}
+
 .paginateItem:hover {
   cursor: pointer;
 }

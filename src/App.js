@@ -13,7 +13,7 @@ function App() {
 	const [filter, setFilter] = useState(false);
 
 	const [currentPage, setCurrentPage] = useState(
-		"https://pokeapi.co/api/v2/pokemon/?limit=15&offset=15"
+		"https://pokeapi.co/api/v2/pokemon/?limit=15&offset=0"
 	);
 	const [nextPage, setNextPage] = useState();
 	const [prevPage, setPrevPage] = useState();
@@ -61,16 +61,18 @@ function App() {
 		<div className="App">
 			<NavBar />
 			<Search
+				title="search"
 				getByName={getByName}
 				getRefs={getRefs}
 				setFilter={setFilter}
 				filterPokemons={filterPokemons}
 			/>
 			<Catalog
+				title="catalog"
 				pokemons={filter ? filteredPokemons : pokemons}
 				nextPage={nextPage}
-        prevPage={prevPage}
-        setCurrentPage={setCurrentPage}
+				prevPage={prevPage}
+				setCurrentPage={setCurrentPage}
 			/>
 			<Top />
 		</div>

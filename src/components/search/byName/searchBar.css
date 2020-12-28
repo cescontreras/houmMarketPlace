@@ -1,10 +1,10 @@
 .searchInput {
-  width: 75%;
-  position: relative;
+	width: 75%;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-  align-items: center;
+	align-items: center;
 }
 
 #gotta {
@@ -22,13 +22,13 @@
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	background-color: rgba(var(--salmon), 1);
-  border-radius: 15px;
+	border-radius: 15px;
 }
 
 .searchForm {
-  background-color: var(--white);
-  border-radius: 15px;
-  width: 80%;
+	background-color: var(--white);
+	border-radius: 15px;
+	width: 80%;
 }
 
 .btn-outline-secondary:not(:disabled):not(.disabled):focus {
@@ -40,14 +40,24 @@
 	display: flex;
 }
 
+.error::placeholder {
+	color: var(--red);
+	font-style: italic;
+}
+
+#validationError {
+	position: absolute;
+	padding-bottom: 15px;
+}
+
 @media (min-width: 600px) {
 	.searchInput {
 		height: 100%;
 		flex-direction: column;
-    justify-content: center;    
+		justify-content: center;
 		align-items: flex-start;
-    padding-left: 5vw;
-    width: 40%;
+		padding-left: 5vw;
+		width: 40%;
 	}
 
 	#gotta {

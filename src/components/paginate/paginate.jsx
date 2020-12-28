@@ -5,29 +5,25 @@ export default function Paginate({ nextPage, prevPage, setCurrentPage }) {
 	return (
 		<nav aria-label="Page navigation example">
 			<ul className="pagination">
-				<li className="page-item">
+				<li className={prevPage ? "page-item" : "page-item disabled"}>
 					<a
 						className="page-link paginateItem"
 						aria-label="Previous"
 						onClick={() => setCurrentPage(prevPage)}
 					>
-						<span aria-hidden="true" value={prevPage}>
-							&laquo;
-						</span>
+						<span aria-hidden="true">&laquo;</span>
 					</a>
 				</li>
-				<li className="page-item">
-					<a className="page-link disabled disabledItem">&bull;</a>
+				<li className="page-item disabled">
+					<a className="page-link disabledItem">&bull;</a>
 				</li>
-				<li className="page-item">
+				<li className={nextPage ? "page-item" : "page-item disabled"}>
 					<a
 						className="page-link paginateItem"
 						aria-label="Next"
 						onClick={() => setCurrentPage(nextPage)}
 					>
-						<span aria-hidden="true">
-							&raquo;
-						</span>
+						<span aria-hidden="true">&raquo;</span>
 					</a>
 				</li>
 			</ul>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Zoom from "react-reveal/Zoom";
+import { Link, animateScroll as scroll } from "react-scroll";
 import "./searchBar.css";
 
 export default function SearchBar({
@@ -10,6 +11,7 @@ export default function SearchBar({
 	showTypes,
 }) {
 	const [name, setName] = useState("");
+	const [validationError, setValidationError] = useState(false);
 
 	const handleName = (e) => {
 		const name = e.target.value.toLowerCase();
@@ -17,8 +19,12 @@ export default function SearchBar({
 	};
 
 	const get = async () => {
-		setFilter(true);
-		await getByName(name);
+		if (name) {
+			setFilter(true);
+			await getByName(name);
+		} else {
+			setValidationError(true);
+		}
 	};
 
 	const showAll = () => {
@@ -34,24 +40,32 @@ export default function SearchBar({
 					<input
 						onChange={(e) => handleName(e)}
 						type="text"
-						className="form-control searchForm"
-						placeholder="Find your Pokemon !! ..."
+						className={
+							validationError
+								? "form-control searchForm error"
+								: "form-control searchForm"
+						}
+						placeholder={
+							validationError ? "Must Type a Name !!" : "Find your Pokemon !! ..."
+						}
 						aria-describedby="button-addon2"
 					/>
-					<button
+					<Link
+						to="catalog"
 						className="btn btn-outline-secondary searchButton"
 						type="button"
 						id="button-addon2"
 						onClick={() => get()}
-					></button>
+					></Link>
 				</div>
 				<div className="buttons">
-					<button
+					<Link
+						to="catalog"
 						className="btn btn-primary shadow-lg filterButton"
 						onClick={() => showAll()}
 					>
 						Show All
-					</button>
+					</Link>
 					{showTypes ? (
 						<button
 							className="btn btn-primary shadow-lg filterButton"

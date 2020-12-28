@@ -1,16 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "./card/card";
 import Paginate from "../paginate/paginate";
 import "./catalog.css";
 
-export default function Catalog({
-	pokemons,
-	nextPage,
-	prevPage,
-	setCurrentPage,
-}) {
+export default function Catalog({pokemons, nextPage, prevPage, setCurrentPage}) {
+
+	const [loading, setLoading] = useState(true)
 	return (
-		<div className="catalogContainer">
+		<div className="catalogContainer">		
 			<Paginate
 				prevPage={prevPage}
 				nextPage={nextPage}

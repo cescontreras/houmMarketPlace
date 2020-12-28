@@ -4,10 +4,10 @@ import logo from "../../assets/logo.png"
 
 export default function Top() {
     function TopEvent() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        document.body.scrollTop = 0; 
+        document.documentElement.scrollTop = 0; 
     }
-    // When the user scrolls down 20px from the top of the document, show the button   
+
     function scrollFunction() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
             document.getElementById("topButton").style.visibility = "visible";
@@ -16,8 +16,8 @@ export default function Top() {
         }
     }
     window.onscroll = function() {scrollFunction();};
-    window.onload = function() {scrollFunction();}; //To make sure that this button is not visible at starting.
-    // When the user clicks on the button, scroll to the top of the document
+    window.onload = function() {scrollFunction();}; 
+    
     return (
         <button onClick={TopEvent} id="topButton" title="Go to top"><i src={logo} aria-hidden="true"></i></button>
         );

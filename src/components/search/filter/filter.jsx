@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import LightSpeed from "react-reveal/LightSpeed";
+
 import axios from "axios";
 import { capitalize } from "../../../helpers/helpers";
 import "./filter.css";
