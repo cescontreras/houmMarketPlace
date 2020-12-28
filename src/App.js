@@ -20,7 +20,21 @@ function App() {
       setPokemons([...pokemons, data])    
   };  
 
-  // const getByType = ahora este filtro es en el front, traigo de a 15 hago promise all los muestro
+  // ahora este filtro es en el front, traigo de a 15 hago promise all los muestro
+  const filterPokemons = () => {
+    const filtered = pokemons.filter((p) => {
+      
+    })  
+  }
+
+  const filterByType = (pokemon, filter) => {
+    pokemon.types.forEach(p => {
+     if(p.type.name === filter){
+       return true
+     }
+    });
+  } 
+
   const getAll = async (url) => {
     const { data } = await axios.get(url);
     return data;
