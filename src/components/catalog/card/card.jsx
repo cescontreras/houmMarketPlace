@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
-import mock from "./mock";
 import { capitalize, toTitleCase } from "../../../helpers/helpers";
 import "./card.css";
 import axios from "axios";
 
 export default function Card({ pokemon }) {
+
 	const p = pokemon && pokemon;
-	// const p = mock;
 	const [heldItems, setHeldItems] = useState([]);
 	const [abilities, setAbilities] = useState([]);
 

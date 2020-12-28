@@ -39,7 +39,7 @@
     border-color: var(--white);
 }
 
-@media (min-width:600px) {
+@media (min-width: 600px) {
   .filter {
     width: 50%;
   }

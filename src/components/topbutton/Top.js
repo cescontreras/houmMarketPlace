@@ -17,8 +17,8 @@ export default function Top() {
     }
     window.onscroll = function() {scrollFunction();};
     window.onload = function() {scrollFunction();}; 
-    
+
     return (
-        <button onClick={TopEvent} id="topButton" title="Go to top"><i src={logo} aria-hidden="true"></i></button>
+        <button onClick={TopEvent} id="topButton" title="Go to top"><i class="fas fa-hand-point-up" aria-hidden="true"></i></button>
         );
     }
