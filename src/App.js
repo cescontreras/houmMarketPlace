@@ -32,6 +32,7 @@ function App() {
      if(p.type.name === filter){
        return true
      }
+     return false
     });
   } 
 
