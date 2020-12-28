@@ -10,7 +10,10 @@ export default function Search({getByName, getRefs, setFilter,filterPokemons}) {
 	return (
 		<div className="searchContainer">
       <SearchBar getByName={getByName} getRefs={getRefs} setFilter={setFilter} setShowTypes={setShowTypes} showTypes={showTypes}/>			
+			{
+				showTypes &&
 			<Filter setFilter={setFilter} filterPokemons={filterPokemons} showTypes={showTypes}/>
+			}
 		</div>
 	);
 }

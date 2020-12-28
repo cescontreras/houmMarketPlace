@@ -1,0 +1,7 @@
+.paginateItem:hover {
+  cursor: pointer;
+}
+
+.disabledItem {
+  cursor:default;
+}

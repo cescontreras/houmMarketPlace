@@ -15,5 +15,6 @@
 @media (min-width: 600px){
   .searchContainer {
     flex-direction: row;
+    justify-content: flex-start;
   }
 }

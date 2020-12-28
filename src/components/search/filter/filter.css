@@ -5,7 +5,9 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-content: flex-start
+  align-items: center;
+  align-content: flex-start;
+  padding-top: 30px;
 }
 
   .filterButton {
@@ -39,7 +41,7 @@
 
 @media (min-width:600px) {
   .filter {
-    height: 50%;
+    width: 50%;
   }
 
   .filterButton {

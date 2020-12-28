@@ -22,8 +22,7 @@ export default function Filter({ setFilter, filterPokemons, showTypes }) {
 
 	return (
 		<div className="filter">
-			{ showTypes ?
-			types[0] &&
+			{types[0] &&
 				types.map((type, i) => (
 					<LightSpeed right key={i}>
 						<button
@@ -35,11 +34,7 @@ export default function Filter({ setFilter, filterPokemons, showTypes }) {
 							{capitalize(type.name)}
 						</button>
 					</LightSpeed>
-				))
-				:
-				<div></div>
-			
-			}
+				))}
 		</div>
 	);
 }

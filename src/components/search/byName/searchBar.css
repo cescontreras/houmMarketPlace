@@ -1,58 +1,66 @@
 .searchInput {
-  height: 25%;
   width: 75%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; 
+  position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+  align-items: center;
 }
-  #gotta {
-    font-display:inherit;
-    color: var(--red);
-    -webkit-text-stroke: 1px var(--white);
-    
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-  }
 
-  .searchButton {
-    background-image: url("../../../assets/search.png");
-    background-size: 70%;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;    
-    background-color: rgba(var(--salmon), 1);
-    border-radius: 15px;
-  }
+#gotta {
+	padding-bottom: 10px;
+	color: var(--red);
+	font-weight: 500;
+	font-size: 30px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
 
-  .searchForm {
-    background-color: var(--white);
-    border-radius: 15px;
-  }
+.searchButton {
+	background-image: url("../../../assets/search.png");
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-color: rgba(var(--salmon), 1);
+  border-radius: 15px;
+}
 
-  .btn-outline-secondary:not(:disabled):not(.disabled):focus{
-    background-color: var(--red);
-    border-color: var(--white);
-  }
+.searchForm {
+  background-color: var(--white);
+  border-radius: 15px;
+  width: 80%;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled):focus {
+	background-color: var(--red);
+	border-color: var(--white);
+}
+
+.buttons {
+	display: flex;
+}
 
 @media (min-width: 600px) {
-  .searchInput {
-    height: 100%;
-    flex-direction: column;
-    justify-content:first baseline;
-    align-items: flex-start;
+	.searchInput {
+		height: 100%;
+		flex-direction: column;
+    justify-content: center;    
+		align-items: flex-start;
     padding-left: 5vw;
-  }
+    width: 40%;
+	}
 
-  #gotta {
-    padding-bottom: 5vh;
-    font-weight: 500;
-    font-size: 7vh;
-  }
+	#gotta {
+		padding-bottom: 5vh;
+		font-weight: 500;
+		font-size: 7vh;
+	}
 
-  .searchForm {
-    height: 8vh;
-  }
+	.searchForm {
+		height: 8vh;
+	}
 
-  .searchButton {
-    width: 10%;
-  }
+	.searchButton {
+		width: 10%;
+	}
 }
