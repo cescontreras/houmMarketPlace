@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Zoom from "react-reveal/Zoom";
 import "./searchBar.css";
 
-export default function SearchBar({getByName}) {
+export default function SearchBar({getByName, clear, setFilter}) {
 
 	const [name, setName] = useState('');
 
@@ -11,9 +11,9 @@ export default function SearchBar({getByName}) {
 		setName(name)
 	}	
 
-	const get = () => {
-		getByName(name)
-		setName('')
+	const get = async () => {
+		setFilter({status: true, filter: "name"})
+		await getByName(name)
 	}		
 
 	return (
@@ -35,6 +35,8 @@ export default function SearchBar({getByName}) {
 						onClick={() => get()}
 					></button>
 				</div>
+				<button >Clear</button>
+				<button >Filter by Type</button>
 			</div>
 		</Zoom>
 	);

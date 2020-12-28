@@ -4,9 +4,9 @@ import { capitalize, toTitleCase } from "../../../helpers/helpers";
 import "./card.css";
 import axios from "axios";
 
-export default function Card(props) {
-	// const p = props.pokemon;
-	const p = mock;
+export default function Card({pokemon}) {
+	const p = pokemon && pokemon;
+	// const p = mock;
 	const [heldItems, setHeldItems] = useState([]);
 	const [abilities, setAbilities] = useState([]);
 
@@ -47,35 +47,44 @@ export default function Card(props) {
 					<label id="HP">{p.stats[0].base_stat} HP</label>
 				</div>
 				<div className="imageContainer">
-					<img className="image" alt="" src={p.sprites.front_female}></img>
-					<img className="image" alt="" src={p.sprites.back_female}></img>
+					<img className="image" alt="" src={p.sprites.front_default}></img>
+					<img className="image" alt="" src={p.sprites.back_default}></img>
 				</div>
 				<div className="pokemonInfo">
 					<label className="wh">Height: {p.height * 10} Cm</label>
 					<label className="wh">Weight: {p.weight / 10} Kg</label>
 				</div>
-				{heldItems &&
-					heldItems.map((item, i) => (
-						<div className="pokemonHeldItems" key={i}>
-							<div className="heldItemImg">
-								<img alt="" src={item.sprites.default}></img>
+				<div className="heldContainer">
+					{heldItems &&
+						heldItems.map((item, i) => (
+							<div className="pokemonHeldItems" key={i}>
+								<div className="heldItemImg">
+									<img alt="" src={item.sprites.default}></img>
+								</div>
+								<div className="heldItemInfo">
+									<label id="heldTitle">
+										{toTitleCase(item.name)}
+										<label id="heldCategory">({capitalize(item.category.name)})</label>
+									</label>
+									<p id="heldInfo">{item.flavor_text_entries[0].text}</p>
+								</div>
 							</div>
-							<div className="heldItemInfo">
-								<label id="heldTitle">
-									{toTitleCase(item.name)}
-									<label id="heldCategory">({capitalize(item.category.name)})</label>
-								</label>
-								<label id="heldInfo">{item.flavor_text_entries[0].text}</label>
-							</div>
-						</div>
-					))}
-
-				{abilities &&
-					abilities.map((ability, i) => (
-						<div className="pokemonAbilities">
-							<label>{ability.flavor_text_entries[0].flavor_text}</label>
-						</div>
-					))}
+						))}
+				</div>
+				<div className="abilitiesContainer">
+					<label id="abilitiesLabel">Abilities</label>
+					<div className="abilitiesContainerData">
+						{abilities &&
+							abilities.map((ability, i) => (
+								<div className="pokemonAbilities">
+									<label id="abilityTitle">{capitalize(ability.name)}</label>
+									<p id="abilityInfo">
+										{ability.flavor_text_entries[0].flavor_text}
+									</p>
+								</div>
+							))}
+					</div>
+				</div>
 			</div>
 		</div>
 	);

@@ -1,47 +1,61 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import NavBar from "./components/navBar/navBar";
 import Search from "./components/search/searchContainer";
 import Catalog from "./components/catalog/catalog";
-import Top from "./components/topbutton/Top"
-import './App.css';
-import axios from 'axios';
+import Top from "./components/topbutton/Top";
+import "./App.css";
+import axios from "axios";
 
 function App() {
 
-  const [pokemons, setPokemons] = useState([])
+	const [pokemons, setPokemons] = useState([]);
 
-  const getByName = async(name) => {
-    const {data} = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)    
-    setPokemons([...pokemons, data])
+	const [nextPage, setNextPage] = useState();
+	const [prevPage, setPrevPage] = useState();
+
+	const [filter, setFilter] = useState({filter: "", status: false});
+  
+	const getByName = async (name) => {
+    const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
+      setPokemons([...pokemons, data])    
+  };  
+
+  // const getByType = ahora este filtro es en el front, traigo de a 15 hago promise all los muestro
+  const getAll = async (url) => {
+    const { data } = await axios.get(url);
+    return data;
   }
 
-  // const getByType = async(type) => {
-  //   const {data} = await axios.get(`https://pokeapi.co/api/v2/type/${type}`)
-  //   return data.pokemon;    
-  // }
-
-  // const getPokemons = async (query) => {
-  //   setPokemons([])
-  //   const p = await getByType(query);    
-  //   p && p.map(p => {
-  //     const {data} = axios.get(p.pokemon.url)
-  //     setPokemons([...pokemons, data])
-  //   })
-  // }
+	const getRefs = async () => {
+		const { data } = await axios.get("https://pokeapi.co/api/v2/pokemon/?limit=15&offset=15");
+		setPrevPage(data.previous);
+    setNextPage(data.next);
+    
+    const pokemons = await getPokemons(data.results)
+    setPokemons(pokemons)
+  };
   
-  useEffect(() => {
-    // getPokemons('ground')
-  }, [])
+  const getPokemons = async (data) => {
+      return Promise.all(data.map((ref) => getAll(ref.url)))    
+  }
 
-  return (
-    <div className="App">
-      <NavBar/>
-      <Search getByName={getByName}/>
-      <Catalog pokemons={pokemons}/>
-      {/* <Footer /> */}
-      <Top />
-    </div>
-  );
+  const clear = () => {
+    setPokemons([])
+  }
+
+	useEffect(() => {
+		getRefs()
+	}, []);
+
+	return (
+		<div className="App">
+			<NavBar />
+			<Search getByName={getByName} clear={clear} setFilter={setFilter}/>
+			<Catalog pokemons={pokemons} />
+			{/* <Footer /> */}
+			<Top />
+		</div>
+	);
 }
 
 export default App;
