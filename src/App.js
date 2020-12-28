@@ -22,9 +22,8 @@ function App() {
 
   // ahora este filtro es en el front, traigo de a 15 hago promise all los muestro
   const filterPokemons = () => {
-    const filtered = pokemons.filter((p) => {
-      
-    })  
+    const filtered = pokemons.filter((p) => filterByType(p, filter))  
+    return filtered
   }
 
   const filterByType = (pokemon, filter) => {
