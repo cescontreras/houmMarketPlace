@@ -14,8 +14,11 @@ export default function Catalog({pokemons, nextPage, prevPage, setCurrentPage}) 
 				setCurrentPage={setCurrentPage}
 			/>
 			<div className="catalog">
-				{pokemons &&
-					pokemons.map((p, i) => <Card pokemon={p} key={`${p.name}${i}`} />)}
+				{pokemons.length ? 
+					pokemons.map((p, i) => <Card pokemon={p} key={`${p.name}${i}`} />)
+					:
+					<h2 id="noPokemons">No Pokemons</h2>
+				}
 			</div>
       <Paginate
 				prevPage={prevPage}

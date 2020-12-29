@@ -18,3 +18,9 @@
   align-items: center;
   flex-wrap: wrap;
 }
+
+#noPokemons {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--red);
+}
