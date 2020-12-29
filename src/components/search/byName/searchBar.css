@@ -52,12 +52,10 @@
 
 @media (min-width: 600px) {
 	.searchInput {
+		width: 75%;
 		height: 100%;
-		flex-direction: column;
 		justify-content: center;
-		align-items: flex-start;
 		padding-left: 5vw;
-		width: 40%;
 	}
 
 	#gotta {
@@ -65,7 +63,30 @@
 		font-weight: 500;
 		font-size: 7vh;
 		font-size: 2rem;
+	}
 
+	.searchForm {
+		height: 8vh;
+	}
+
+	.searchButton {
+		width: 10%;
+	}
+}
+
+@media (min-width: 900px) {
+	.searchInput {
+		width: 40%;
+		height: 100%;
+		justify-content: center;
+		padding-left: 5vw;
+	}
+
+	#gotta {
+		padding-bottom: 5vh;
+		font-weight: 500;
+		font-size: 7vh;
+		font-size: 2rem;
 	}
 
 	.searchForm {

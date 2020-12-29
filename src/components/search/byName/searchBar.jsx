@@ -31,7 +31,6 @@ export default function SearchBar({
 		setFilter(false);
 		getRefs();
 	};
-
 	return (
 		<Zoom>
 			<div className="searchInput">
