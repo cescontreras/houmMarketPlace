@@ -67,14 +67,14 @@ export default function SearchBar({
 					</Link>
 					{showTypes ? (
 						<button
-							className="btn btn-primary shadow-lg filterButton"
+							className="btn btn-primary shadow-lg filterButton showTypes"
 							onClick={() => setShowTypes(!showTypes)}
 						>
 							Hide Types
 						</button>
 					) : (
 						<button
-							className="btn btn-primary shadow-lg filterButton"
+							className="btn btn-primary shadow-lg filterButton showTypes"
 							onClick={() => setShowTypes(!showTypes)}
 						>
 							Show Types

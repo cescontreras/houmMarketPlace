@@ -50,6 +50,12 @@
 	padding-bottom: 15px;
 }
 
+.showTypes {
+	text-align: center;
+	font-size: 12px;
+}
+
+
 @media (min-width: 600px) {
 	.searchInput {
 		width: 75%;
@@ -71,6 +77,10 @@
 
 	.searchButton {
 		width: 10%;
+	}
+
+	.showTypes {
+		font-size: 15px;
 	}
 }
 
